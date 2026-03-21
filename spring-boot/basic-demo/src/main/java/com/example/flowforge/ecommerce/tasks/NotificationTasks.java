@@ -12,10 +12,15 @@ import java.time.Duration;
 @TaskHandler( "notifications")
 public class NotificationTasks {
 
-    @FlowTask( id = "notifyResult")
-    public Mono<Void> notifyResult(ValidationResult in) {
-        return Mono.empty()
-                .delayElement(Duration.ofSeconds(1))
-                .then();
+    @FlowTask(id = "notifyResult", retryMaxRetries = 3)
+    public Mono<Void> notifyResult(ValidationResult result) {
+        // Lab Scenario: Randomly fail with a network error
+        if (Math.random() < 0.7) {
+            System.err.println("⚠ [ERROR] Failed to send notification (Simulated)");
+            return Mono.error(new RuntimeException("External Service Timeout!"));
+        }
+
+        System.out.println("✅ Notification sent successfully!");
+        return Mono.empty();
     }
 }
