@@ -9,6 +9,8 @@ import org.royada.flowforge.spring.workflow.WorkflowDefinition;
 import org.royada.flowforge.workflow.plan.WorkflowExecutionPlan;
 import org.springframework.stereotype.Component;
 
+import java.time.Duration;
+
 @Component
 @FlowWorkflow(id = "order-process")
 public class OrderProcessorWorkflow implements WorkflowDefinition {
@@ -19,6 +21,7 @@ public class OrderProcessorWorkflow implements WorkflowDefinition {
                 .fork(
                         branch -> branch.then(NotificationTasks::notifyResult),
                         branch -> branch.then(AuditTasks::archiveAuditLog)
+                                .withTimeout(Duration.ofMillis(500))
                 )
                 .join(OrderTasks::finalNotification)
                 .build();
