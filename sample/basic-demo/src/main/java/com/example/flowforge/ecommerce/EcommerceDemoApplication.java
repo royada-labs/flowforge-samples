@@ -18,6 +18,6 @@ public class EcommerceDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(orderService.getOrderDetails("order-123").block());
+		System.out.println(orderService.processOrder("order-123").block());
 	}
 }

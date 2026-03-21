@@ -2,6 +2,7 @@ package com.example.flowforge.ecommerce.tasks;
 
 
 import com.example.flowforge.ecommerce.model.Order;
+import com.example.flowforge.ecommerce.model.ValidationResult;
 import org.royada.flowforge.spring.annotations.FlowTask;
 import org.royada.flowforge.spring.annotations.TaskHandler;
 import org.springframework.stereotype.Component;
@@ -22,5 +23,20 @@ public class OrderTasks {
                 .build();
 
         return Mono.just(order);
+    }
+
+    @FlowTask(id = "validateOrder")
+    public Mono<ValidationResult> validateOrder(Order order) {
+        if (order.getAmount() > 0) {
+            return Mono.just(new ValidationResult(true, "Validated"));
+        }
+        return  Mono.just(new ValidationResult(false, "Invalid Amount"));
+    }
+
+    @FlowTask(id = "finalNotification")
+    public Mono<Void> finalNotification(Object in) {
+        // This task runs AFTER the parallel branches are joined
+        System.out.println("Pipeline finished. Sending final system alert.");
+        return Mono.empty();
     }
 }

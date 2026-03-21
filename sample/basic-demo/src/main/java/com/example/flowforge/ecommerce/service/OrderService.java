@@ -1,6 +1,5 @@
 package com.example.flowforge.ecommerce.service;
 
-import com.example.flowforge.ecommerce.model.Order;
 import org.royada.flowforge.api.FlowForgeClient;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -13,8 +12,8 @@ public class OrderService {
         this.flowForgeClient = flowForgeClient;
     }
 
-    public Mono<Order> getOrderDetails(String orderId) {
+    public Mono<Void> processOrder(String orderId) {
         return flowForgeClient.executeResult("order-process", orderId)
-                .cast(Order.class);
+                .then();
     }
 }
