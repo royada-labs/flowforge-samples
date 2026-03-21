@@ -12,7 +12,7 @@ import java.time.Duration;
 @TaskHandler("audit")
 public class AuditTasks {
 
-    @FlowTask( id = "archiveAuditLog", optional = true)
+    @FlowTask( id = "archiveAuditLog")
     public Mono<Void> archiveAuditLog(ValidationResult result) {
         return Mono.delay(Duration.ofMillis(1000)) // Simulated slowness (1s)
                 .doOnTerminate(() -> System.err.println("Audit process interrupted?"))
