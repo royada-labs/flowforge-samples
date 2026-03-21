@@ -6,13 +6,16 @@ import org.royada.flowforge.spring.annotations.TaskHandler;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Component
 @TaskHandler("audit")
 public class AuditTasks {
 
     @FlowTask( id = "archiveAuditLog")
-    public Mono<Void> archiveAuditLog(ValidationResult in) {
-        System.out.println("Validation result archived: " + in.getReason());
-        return Mono.empty();
+    public Mono<Void> archiveAuditLog(ValidationResult result) {
+        return Mono.delay(Duration.ofMillis(1000)) // Simulated slowness (1s)
+                .doOnTerminate(() -> System.err.println("Audit process interrupted?"))
+                .then();
     }
 }
