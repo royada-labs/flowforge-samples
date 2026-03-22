@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'com.example.flowforge.ecommerce.Main'
+}
+
+group = 'com.example.flowforge'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.royada.flowforge:flowforge-core:1.1.0'
+    
+    // Core needs Slf4j
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass.get()
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
