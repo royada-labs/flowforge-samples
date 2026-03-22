@@ -80,6 +80,7 @@ public class Main {
                     System.out.println("📊 Pricing Result: " + report.getPriceVerdict());
                     System.out.println("🤖 Sentiment Trend: " + report.getOverallSentiment());
                     System.out.println("⚠️ Risk Diagnosis: " + report.getRiskAssessment());
+                    System.out.println("📝 Summary: " + report.getSummary());
                     System.out.println("🕒 Generated: " + report.getCalculatedAt());
                     System.out.println("-------------------------------------------\n");
                 })

@@ -175,7 +175,7 @@ public class MarketTasks {
                     .priceVerdict(resA)
                     .overallSentiment(resB)
                     .riskAssessment(resRisk)
-                    .summary("Full Analysis Complete.")
+                    .summary(String.format("Full Analysis Complete. Product is %s with %s sentiment.", resA, resB))
                     .calculatedAt(LocalDateTime.now().toString())
                     .build());
         }
