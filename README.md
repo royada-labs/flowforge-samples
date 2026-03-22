@@ -12,6 +12,7 @@ This repository contains multiple ways to integrate FlowForge into your applicat
 | :--- | :--- | :--- |
 | [`spring-boot/basic-demo`](./spring-boot/basic-demo) | Spring Boot 4.0.4 | Basic E-commerce workflow with retries and timeouts. |
 | [`spring-boot/travel-advisor`](./spring-boot/travel-advisor) | Spring Boot 4.0.4 + WebFlux | Real API orchestration (Travel info + Weather). |
+| [`spring-boot/movie-expert`](./spring-boot/movie-expert) | Spring Boot 4.0.4 + WebFlux | **Parallel Workflow** (Fork/Join) with OMDb real data. |
 | [`spring/basic-demo`](./spring/basic-demo) | Plain Spring 6.x | Same E-commerce workflow but for non-Boot Spring apps. |
 | [`spring/travel-advisor`](./spring/travel-advisor) | Plain Spring 6.x | Travel Advisor using manual Spring context. |
 | [`java/basic-demo`](./java/basic-demo) | Pure Java 21 | Manual FlowForge setup without any Spring dependency. |
