@@ -47,4 +47,4 @@ For more information about FlowForge, visit the [Official Documentation](https:/
 ---
 
 ## 📄 License
-MIT License.
+Apache License 2.0.
