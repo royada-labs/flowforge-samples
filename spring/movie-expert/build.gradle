@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example.flowforge.movie'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.example.flowforge.movie.Main'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.royada.flowforge:flowforge-spring-boot-starter:1.1.0'
+    
+    // Core Spring Framework
+    implementation 'org.springframework:spring-context:6.1.4'
+    implementation 'org.springframework:spring-webflux:6.1.4'
+    implementation 'io.projectreactor.netty:reactor-netty:1.1.15'
+
+    // JSON support for WebClient
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Fat jar to include all dependencies
+tasks.named('jar') {
+    enabled = true
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
