@@ -1,0 +1,29 @@
+
+> Task :compileJava FAILED
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:21: error: <T>of(TaskId,Class<T>) is not public in FlowKey; cannot be accessed from outside package
+    public static final FlowKey<ProductBase> KEY_BASE = new InitInquiryTask().outputKey().of(TaskId.of("fetchBase"), ProductBase.class);
+                                                                                         ^
+  where T is a type-variable:
+    T extends Object declared in method <T>of(TaskId,Class<T>)
+1 error
+
+[Incubating] Problems report is available at: file:///home/rolando/Proyectos/flowforge-samples/java/market-intelligence/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:21: error: <T>of(TaskId,Class<T>) is not public in FlowKey; cannot be accessed from outside package
+      public static final FlowKey<ProductBase> KEY_BASE = new InitInquiryTask().outputKey().of(TaskId.of("fetchBase"), ProductBase.class);
+                                                                                           ^
+    where T is a type-variable:
+      T extends Object declared in method <T>of(TaskId,Class<T>)
+  1 error
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1s
+1 actionable task: 1 executed

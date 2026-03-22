@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example.flowforge.market'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.example.flowforge.market.Main'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.royada.flowforge:flowforge-core:1.1.0'
+    
+    // Pure R2DBC & H2
+    implementation 'io.r2dbc:r2dbc-h2:1.0.0.RELEASE'
+    implementation 'com.h2database:h2:2.2.224'
+
+    // JSON handling for API
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.named('jar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

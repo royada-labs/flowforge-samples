@@ -1,0 +1,49 @@
+
+> Task :compileJava FAILED
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:7: error: package org.springframework.data.annotation does not exist
+import org.springframework.data.annotation.Id;
+                                          ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:8: error: package org.springframework.data.relational.core.mapping does not exist
+import org.springframework.data.relational.core.mapping.Table;
+                                                       ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:14: error: cannot find symbol
+@Table("inventory")
+ ^
+  symbol: class Table
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:16: error: cannot find symbol
+    @Id
+     ^
+  symbol:   class Id
+  location: class Inventory
+4 errors
+
+[Incubating] Problems report is available at: file:///home/rolando/Proyectos/flowforge-samples/java/market-intelligence/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:16: error: cannot find symbol
+      @Id
+       ^
+    symbol:   class Id
+    location: class Inventory
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:14: error: cannot find symbol
+  @Table("inventory")
+   ^
+    symbol: class Table
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:7: error: package org.springframework.data.annotation does not exist
+  import org.springframework.data.annotation.Id;
+                                            ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/model/Inventory.java:8: error: package org.springframework.data.relational.core.mapping does not exist
+  import org.springframework.data.relational.core.mapping.Table;
+                                                         ^
+  4 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 2s
+1 actionable task: 1 executed

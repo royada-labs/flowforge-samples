@@ -1,0 +1,457 @@
+
+> Task :compileJava FAILED
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:23: error: InitInquiryTask is not abstract and does not override abstract method doExecute(String,ReactiveExecutionContext) in BasicTask
+    public static class InitInquiryTask extends BasicTask<String, Long> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:26: error: execute(String,ReactiveExecutionContext) in InitInquiryTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Long> execute(String input, ReactiveExecutionContext ctx) {
+                          ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:33: error: FetchBaseTask is not abstract and does not override abstract method doExecute(Long,ReactiveExecutionContext) in BasicTask
+    public static class FetchBaseTask extends BasicTask<Long, ProductBase> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:36: error: execute(Long,ReactiveExecutionContext) in FetchBaseTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<ProductBase> execute(Long id, ReactiveExecutionContext ctx) {
+                                 ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:43: error: CheckInventoryTask is not abstract and does not override abstract method doExecute(ProductBase,ReactiveExecutionContext) in BasicTask
+    public static class CheckInventoryTask extends BasicTask<ProductBase, Inventory> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:50: error: execute(ProductBase,ReactiveExecutionContext) in CheckInventoryTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Inventory> execute(ProductBase product, ReactiveExecutionContext ctx) {
+                               ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:70: error: FetchAmazonTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+    public static class FetchAmazonTask extends BasicTask<Inventory, Double> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:73: error: execute(Inventory,ReactiveExecutionContext) in FetchAmazonTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:74: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                             ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:81: error: FetchEbayTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+    public static class FetchEbayTask extends BasicTask<Inventory, Double> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:84: error: execute(Inventory,ReactiveExecutionContext) in FetchEbayTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:85: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                             ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:93: error: CalcIndexTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+    public static class CalcIndexTask extends BasicTask<Object, String> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:96: error: execute(Object,ReactiveExecutionContext) in CalcIndexTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<String> execute(Object ignored, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:98: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            double amz = (double) ctx.get(TaskId.of("fetchAmazon")).orElse(0.0);
+                                     ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:99: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            double ebay = (double) ctx.get(TaskId.of("fetchEbay")).orElse(0.0);
+                                      ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:106: error: FetchSocialTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+    public static class FetchSocialTask extends BasicTask<Inventory, Double> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:109: error: execute(Inventory,ReactiveExecutionContext) in FetchSocialTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:116: error: SentimentTask is not abstract and does not override abstract method doExecute(Double,ReactiveExecutionContext) in BasicTask
+    public static class SentimentTask extends BasicTask<Double, String> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:119: error: execute(Double,ReactiveExecutionContext) in SentimentTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<String> execute(Double score, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:127: error: FetchFinanceTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+    public static class FetchFinanceTask extends BasicTask<Inventory, Map> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:130: error: execute(Inventory,ReactiveExecutionContext) in FetchFinanceTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<Map> execute(Inventory in, ReactiveExecutionContext ctx) {
+                         ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:138: error: AssessRiskTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+    public static class AssessRiskTask extends BasicTask<Object, String> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:141: error: execute(Object,ReactiveExecutionContext) in AssessRiskTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<String> execute(Object ignored, ReactiveExecutionContext ctx) {
+                            ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:142: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                             ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:151: error: ConsolidateTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+    public static class ConsolidateTask extends BasicTask<Object, MarketIntelligenceReport> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:154: error: execute(Object,ReactiveExecutionContext) in ConsolidateTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<MarketIntelligenceReport> execute(Object in, ReactiveExecutionContext ctx) {
+                                              ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:156: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                             ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:157: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            Inventory inv = (Inventory) ctx.get(TaskId.of("checkInventory")).orElseThrow();
+                                           ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:158: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            String resA = (String) ctx.get(TaskId.of("calcIndex")).orElse("N/A");
+                                      ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:159: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            String resB = (String) ctx.get(TaskId.of("analyzeSentiment")).orElse("N/A");
+                                      ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:160: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+            String resRisk = (String) ctx.get(TaskId.of("assessRisk")).orElse("N/A");
+                                         ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:177: error: FinalTask is not abstract and does not override abstract method doExecute(MarketIntelligenceReport,ReactiveExecutionContext) in BasicTask
+    public static class FinalTask extends BasicTask<MarketIntelligenceReport, MarketIntelligenceReport> {
+                  ^
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:180: error: execute(MarketIntelligenceReport,ReactiveExecutionContext) in FinalTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+        public Mono<MarketIntelligenceReport> execute(MarketIntelligenceReport report, ReactiveExecutionContext ctx) {
+                                              ^
+  overridden method is final
+  where I,O are type-variables:
+    I extends Object declared in class BasicTask
+    O extends Object declared in class BasicTask
+/home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/Main.java:69: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+                .map(ctx -> (MarketIntelligenceReport) ctx.get(org.royada.flowforge.task.TaskId.of("finalOutput")).orElseThrow())
+                                                          ^
+  required: FlowKey<T>
+  found:    TaskId
+  reason: cannot infer type-variable(s) T
+    (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+  where T is a type-variable:
+    T extends Object declared in method <T>get(FlowKey<T>)
+35 errors
+
+[Incubating] Problems report is available at: file:///home/rolando/Proyectos/flowforge-samples/java/market-intelligence/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:74: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                               ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:85: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                               ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:98: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              double amz = (double) ctx.get(TaskId.of("fetchAmazon")).orElse(0.0);
+                                       ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:99: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              double ebay = (double) ctx.get(TaskId.of("fetchEbay")).orElse(0.0);
+                                        ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:142: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                               ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:156: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              ProductBase p = (ProductBase) ctx.get(TaskId.of("fetchBase")).orElseThrow();
+                                               ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:157: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              Inventory inv = (Inventory) ctx.get(TaskId.of("checkInventory")).orElseThrow();
+                                             ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:158: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              String resA = (String) ctx.get(TaskId.of("calcIndex")).orElse("N/A");
+                                        ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:159: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              String resB = (String) ctx.get(TaskId.of("analyzeSentiment")).orElse("N/A");
+                                        ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:160: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+              String resRisk = (String) ctx.get(TaskId.of("assessRisk")).orElse("N/A");
+                                           ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/Main.java:69: error: method get in interface ReactiveExecutionContext cannot be applied to given types;
+                  .map(ctx -> (MarketIntelligenceReport) ctx.get(org.royada.flowforge.task.TaskId.of("finalOutput")).orElseThrow())
+                                                            ^
+    required: FlowKey<T>
+    found:    TaskId
+    reason: cannot infer type-variable(s) T
+      (argument mismatch; TaskId cannot be converted to FlowKey<T>)
+    where T is a type-variable:
+      T extends Object declared in method <T>get(FlowKey<T>)
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:26: error: execute(String,ReactiveExecutionContext) in InitInquiryTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Long> execute(String input, ReactiveExecutionContext ctx) {
+                            ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:36: error: execute(Long,ReactiveExecutionContext) in FetchBaseTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<ProductBase> execute(Long id, ReactiveExecutionContext ctx) {
+                                   ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:50: error: execute(ProductBase,ReactiveExecutionContext) in CheckInventoryTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Inventory> execute(ProductBase product, ReactiveExecutionContext ctx) {
+                                 ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:73: error: execute(Inventory,ReactiveExecutionContext) in FetchAmazonTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:84: error: execute(Inventory,ReactiveExecutionContext) in FetchEbayTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:96: error: execute(Object,ReactiveExecutionContext) in CalcIndexTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<String> execute(Object ignored, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:109: error: execute(Inventory,ReactiveExecutionContext) in FetchSocialTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Double> execute(Inventory in, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:119: error: execute(Double,ReactiveExecutionContext) in SentimentTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<String> execute(Double score, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:130: error: execute(Inventory,ReactiveExecutionContext) in FetchFinanceTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<Map> execute(Inventory in, ReactiveExecutionContext ctx) {
+                           ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:141: error: execute(Object,ReactiveExecutionContext) in AssessRiskTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<String> execute(Object ignored, ReactiveExecutionContext ctx) {
+                              ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:154: error: execute(Object,ReactiveExecutionContext) in ConsolidateTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<MarketIntelligenceReport> execute(Object in, ReactiveExecutionContext ctx) {
+                                                ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:180: error: execute(MarketIntelligenceReport,ReactiveExecutionContext) in FinalTask cannot override execute(I,ReactiveExecutionContext) in BasicTask
+          public Mono<MarketIntelligenceReport> execute(MarketIntelligenceReport report, ReactiveExecutionContext ctx) {
+                                                ^
+    overridden method is final
+    where I,O are type-variables:
+      I extends Object declared in class BasicTask
+      O extends Object declared in class BasicTask
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:23: error: InitInquiryTask is not abstract and does not override abstract method doExecute(String,ReactiveExecutionContext) in BasicTask
+      public static class InitInquiryTask extends BasicTask<String, Long> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:33: error: FetchBaseTask is not abstract and does not override abstract method doExecute(Long,ReactiveExecutionContext) in BasicTask
+      public static class FetchBaseTask extends BasicTask<Long, ProductBase> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:43: error: CheckInventoryTask is not abstract and does not override abstract method doExecute(ProductBase,ReactiveExecutionContext) in BasicTask
+      public static class CheckInventoryTask extends BasicTask<ProductBase, Inventory> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:70: error: FetchAmazonTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+      public static class FetchAmazonTask extends BasicTask<Inventory, Double> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:81: error: FetchEbayTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+      public static class FetchEbayTask extends BasicTask<Inventory, Double> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:93: error: CalcIndexTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+      public static class CalcIndexTask extends BasicTask<Object, String> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:106: error: FetchSocialTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+      public static class FetchSocialTask extends BasicTask<Inventory, Double> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:116: error: SentimentTask is not abstract and does not override abstract method doExecute(Double,ReactiveExecutionContext) in BasicTask
+      public static class SentimentTask extends BasicTask<Double, String> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:127: error: FetchFinanceTask is not abstract and does not override abstract method doExecute(Inventory,ReactiveExecutionContext) in BasicTask
+      public static class FetchFinanceTask extends BasicTask<Inventory, Map> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:138: error: AssessRiskTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+      public static class AssessRiskTask extends BasicTask<Object, String> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:151: error: ConsolidateTask is not abstract and does not override abstract method doExecute(Object,ReactiveExecutionContext) in BasicTask
+      public static class ConsolidateTask extends BasicTask<Object, MarketIntelligenceReport> {
+                    ^
+  /home/rolando/Proyectos/flowforge-samples/java/market-intelligence/src/main/java/com/example/flowforge/market/tasks/MarketTasks.java:177: error: FinalTask is not abstract and does not override abstract method doExecute(MarketIntelligenceReport,ReactiveExecutionContext) in BasicTask
+      public static class FinalTask extends BasicTask<MarketIntelligenceReport, MarketIntelligenceReport> {
+                    ^
+  35 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1s
+1 actionable task: 1 executed
