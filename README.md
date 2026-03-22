@@ -18,6 +18,7 @@ This repository contains multiple ways to integrate FlowForge into your applicat
 | [`spring/movie-expert`](./spring/movie-expert) | Plain Spring 6.x | Movie Expert with manual context and OMDb. |
 | [`java/basic-demo`](./java/basic-demo) | Pure Java 21 | Manual FlowForge setup without any Spring dependency. |
 | [`java/travel-advisor`](./java/travel-advisor) | Pure Java 21 | Travel Advisor using native Java HttpClient. |
+| [`java/movie-expert`](./java/movie-expert) | Pure Java 21 | Movie Expert with parallel pure Java tasks. |
 
 ---
 
