@@ -17,6 +17,7 @@ This repository contains multiple ways to integrate FlowForge into your applicat
 | [`spring/basic-demo`](./spring/basic-demo) | Plain Spring 6.x | Same E-commerce workflow but for non-Boot Spring apps. |
 | [`spring/travel-advisor`](./spring/travel-advisor) | Plain Spring 6.x | Travel Advisor using manual Spring context. |
 | [`spring/movie-expert`](./spring/movie-expert) | Plain Spring 6.x | Movie Expert with manual context and OMDb. |
+| [`spring/market-intelligence`](./spring/market-intelligence) | Plain Spring + R2DBC | **High-Complexity (12-task)**: No-Boot version with manual R2DBC setup. |
 | [`java/basic-demo`](./java/basic-demo) | Pure Java 21 | Manual FlowForge setup without any Spring dependency. |
 | [`java/travel-advisor`](./java/travel-advisor) | Pure Java 21 | Travel Advisor using native Java HttpClient. |
 | [`java/movie-expert`](./java/movie-expert) | Pure Java 21 | Movie Expert with parallel pure Java tasks. |
