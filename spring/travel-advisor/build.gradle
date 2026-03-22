@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example.flowforge.travel'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.example.flowforge.travel.Main'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context:6.2.3' // Use a stable spring version if possible or match the one in Boot 4.x
+    implementation 'org.springframework:spring-webflux:6.2.3'
+    implementation 'org.royada.flowforge:flowforge-spring-boot-starter:1.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    
+    // Core needs Slf4j Simple for output
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass.get()
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
